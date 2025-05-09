@@ -30,7 +30,7 @@ jobs:
         python src/train.py --config config.yaml
 
     - name: Guardar modelo como artefacto
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: modelo-entrenado
         path: mlruns/
