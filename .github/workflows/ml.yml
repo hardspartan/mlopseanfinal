@@ -1,0 +1,36 @@
+name: ML Pipeline CI/CD
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  train-and-track:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout código
+      uses: actions/checkout@v3
+
+    - name: Configurar Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Instalar dependencias
+      run: |
+        pip install -r requirements.txt
+
+    - name: Ejecutar pruebas
+      run: |
+        pytest
+
+    - name: Entrenar el modelo
+      run: |
+        python src/train.py --config config.yaml
+
+    - name: Guardar modelo como artefacto
+      uses: actions/upload-artifact@v3
+      with:
+        name: modelo-entrenado
+        path: mlruns/

@@ -1,0 +1,19 @@
+# Entornos virtuales
+.venv/
+env/
+venv/
+
+# Archivos de sistema
+__pycache__/
+*.pyc
+.DS_Store
+
+# Archivos de MLflow (ya se sube como artifact si se desea)
+mlruns/
+
+# Archivos temporales
+*.log
+*.tmp
+
+# Archivos personales
+*.ipynb_checkpoints/

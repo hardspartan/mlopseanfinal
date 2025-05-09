@@ -1,0 +1,9 @@
+data_path: data/HeartDiseaseTrain-Test.csv
+
+model_params:
+  solver: liblinear
+  max_iter: 200
+
+mlflow:
+  tracking_uri: http://127.0.0.1:5000
+  experiment_name: Heart Disease Logistic Regression
