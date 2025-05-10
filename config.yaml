@@ -5,5 +5,5 @@ model_params:
   max_iter: 200
 
 mlflow:
-  tracking_uri: http://127.0.0.1:5000
+  tracking_uri: file:///tmp/mlruns
   experiment_name: Heart Disease Logistic Regression
